@@ -1,0 +1,45 @@
+html {
+    overflow-x: hidden;
+    font-size: 1em;
+    background: #fff;
+    height: 100%;
+    padding:none
+}
+
+body {
+    color: #444;
+    font-family: "Helvetica", sans-serif;
+    overflow-x: hidden;
+    height: 100%;
+    padding:10px
+}
+
+
+textarea {
+  outline: none;
+  resize: none;
+  overflow: auto;
+  width: 95%;
+  border-color: #eee
+
+}
+
+#bodyEditor > textarea {
+  height: 80vh;
+}
+
+#docId {
+  display:none;
+}
+
+
+.render_h1 {
+  font-size: 1.6em;
+  font-family: 'Enriqueta', serif;
+}
+
+.render_h2 {
+  font-size: 1.3em;
+  font-family: 'Enriqueta', serif;
+
+}

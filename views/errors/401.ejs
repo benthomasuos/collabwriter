@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ../templates/head.ejs %>
+<body>
+<% include ../templates/home-navbar.ejs %>
+
+<div class="uk-container uk-text-center uk-width-1-2 uk-height-1-1 uk-padding-large">
+    <h1>Oops!</h1>
+
+
+    <div class="uk-container uk-padding-large">
+        <i class="fa fa-hand-paper-o fa-5x"></i>
+        <h3>You tried to access a page while not being logged in.</h3>
+        <a class="uk-button uk-button-primary uk-text-large" href="/auth/login">Log in here</a>
+    </div>
+    <div class="uk-container uk-padding-large">
+
+        <p>It appears you are trying to access a page to which you are not authorised. Please try again.</p>
+        <p>On the other-hand, if you are deliberately accessing something you shouldn't, definitely <em>DO NOT</em> try again. Go sit in a corner to think about what you have done.</p>
+
+        <p>Maybe you could go back to <a href="/" class="uk-link">the homepage</a> where there's some pretty cool stuff to look at!</p>
+    </div>
+</div>
+
+
+</body>
+<% include ../templates/foot.ejs %>
+</html>

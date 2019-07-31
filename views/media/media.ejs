@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<% include ../templates/head.ejs %>
+<body>
+<% include ../templates/navbar.ejs %>
+	<div class="uk-container uk-button-group">
+
+	    <% include ../templates/forms/new_media.ejs %>
+
+	</div>
+
+
+	<div class="uk-container uk-width-1-1 uk-margin uk-flex uk-flex-between uk-flex-row uk-flex-wrap" id="imagesList" uk-lightbox="animation: slide"></div>
+
+
+
+	<div class="uk-container uk-width-1-1 uk-margin uk-flex uk-flex-between uk-flex-row uk-flex-wrap" id="videosList"></div>
+
+
+
+	<div class="uk-container uk-width-1-1 uk-margin uk-flex uk-flex-between uk-flex-row uk-flex-wrap" id="documentsList"></div>
+
+<% include ../templates/scripts.ejs %>
+<script src="/js/media/mediaUpload.js" type="text/javascript"></script>
+<script src="/js/media/media.js" type="text/javascript"></script>
+</body>
+<% include ../templates/foot.ejs %>
+</html>

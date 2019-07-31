@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<% include ../templates/head.ejs %>
+<body>
+<% include ../templates/home-navbar.ejs %>
+
+<div class="uk-container uk-text-center">
+    <h1>MAPP Powder Database</h1>
+
+</div>
+
+
+    <div class="uk-container uk-align-center uk-width-1-3@s">
+
+        <h2>Registration</h2>
+
+        <form class="uk-form" enctype="application/x-www-form-urlencoded" role="form" method="post" action="/auth/register">
+            <% include ../templates/user_form.ejs %>
+
+
+
+                <div class="col-sm-9 col-sm-offset-3">
+                    <div class="checkbox">
+                        <label>
+                            <input id="termsAccept" class="uk-checkbox" type="checkbox" name="terms_accepted" required disabled>I accept the <a class="uk-link" href="#" uk-toggle="target: #terms-modal">Terms of Use</a>
+                        </label>
+
+                    </div>
+                </div>
+
+
+                <div class="uk-margin">
+                    <input type="submit" class="uk-button uk-button-primary" value="Register me!">
+                </div>
+            </form> <!-- /form -->
+
+
+    </div>
+    <div id="terms-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title uk-text-center">Terms of use</h2>
+        <p>Whilst these terms are not meant to cover all legal bases, there are a few things to follow in order to ensure a high quality of data for all users of the platform.</p>
+        <p>By clicking accept and using this website you agree to adhere to the following guidelines. You also accept that we may use certain parts of your personal data in order to make the experience of this system more user friendly.</p>
+        <p>The security of your personal details is extremely important to us. No personal data is provided nor sold to any third parties outside of the MAPP project.</p>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Decline</button>
+            <button class="uk-button uk-button-primary uk-modal-close" type="button" onclick="$('#termsAccept').prop('checked', true)">Accept</button>
+        </p>
+    </div>
+</div>
+
+
+
+
+
+<% include ../templates/scripts.ejs %>
+<script src="/js/signup.js" type="text/javascript"></script>
+</body>
+<% include ../templates/foot.ejs %>
+</html>

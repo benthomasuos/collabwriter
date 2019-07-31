@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<% include ../templates/head.ejs %>
+<body>
+<% include ../templates/home-navbar.ejs %>
+
+
+    <div class="uk-container ">
+        <div class="uk-container uk-padding-small uk-text-center">
+            <h1>MAPP Powder Database - User Area</h1>
+            <img width="100" src="/images/mapp_logo.png" />
+        </div>
+        <div class="uk-container uk-width-1-3@s uk-margin-bottom">
+            <h2 class="uk-text-center">Log in</h2>
+            <form class="uk-form" role="form" action='/auth/login' method='POST'>
+
+
+                <label>Username</label>
+                <input type="text" id="username" name="username" class="uk-input" placeholder="Username" required autofocus autocomplete="username">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"  class="uk-input" placeholder="Password" required autofocus autocomplete="password">
+                <div class="uk-padding-small uk-text-center">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+                <div class="uk-flex uk-margin uk-child-width-1-2 uk-text-center">
+                    <div>
+                          <a href="/auth/reset_password" class="uk-button uk-button-muted uk-button-small">Forgot your password</a>
+                    </div>
+                    <div>
+                        <button class="uk-button uk-button-primary" type='submit'>Sign in  <i class="fa fa-sign-in"></i></button>
+                    </div>
+                </div>
+              </form>
+
+              <div class="uk-container uk-text-center">
+                  <a href="/auth/register" class="uk-button uk-button-default uk-button-small">Don't have an account? Go to the registration page <i class="fa fa-arrow-right"></i></a>
+              </div>
+
+          </div>
+    </div>
+
+
+
+
+
+<% include ../templates/scripts.ejs %>
+</body>
+<% include ../templates/foot.ejs %>
+</html>

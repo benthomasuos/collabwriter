@@ -1,0 +1,40 @@
+
+<div class="uk-button uk-button-primary uk-button-small uk-modal-close" type="button" uk-toggle="target: #media-modal"><i class="fa fa-plus"></i>Upload</div>
+
+<div id="media-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+         <a class="uk-modal-close-default" type="button" uk-close></a>
+
+
+
+        <form id="newMediaForm" class="uk-form uk-form-horizontal" method="POST" action="/media/upload" enctype='multipart/form-data'>
+
+        <h3>Upload</h3>
+
+        <label>File</label>
+        <div class="uk-container">
+            <div  uk-form-custom>
+                <input class="uk-file" type="file" id="file" name="upload" placeholder="Upload file" oninput="previewFiles($(this))" accept="text/*, image/*, video/*, application/pdf, application/octet-stream" multiple='multiple' required/>
+                <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
+                <div class="uk-margin uk-width-1-1 uk-flex uk-flex-row uk-flex-wrap" id="preview"></div>
+            </div>
+
+                    <progress class='uk-progress' id='upload-progress'></progress>
+
+        </div>
+
+
+        <div class="uk-margin uk-button-group uk-align-right">
+           <div class="uk-button uk-button-default" onclick="$('#newMediaForm')[0].reset()"><i class="fa fa-refresh"></i>Reset form</div>
+           <div class="uk-button uk-button-primary" onclick="uploadFiles($('#newMediaForm'))"><i class="fa fa-upload"></i> Upload</div>
+        </div>
+
+        </form>
+
+
+
+
+
+
+    </div>
+</div>

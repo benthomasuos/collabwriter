@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ../templates/head.ejs %>
+<body>
+
+<h1>CollabWriter</h1>
+<span id='docId'><%= id %></span>
+
+<div class="uk-flex uk-flex-nowrap">
+  <div class="uk-width-1-2" id='editBox'>
+    <div class="uk-width-1-1" id="titleEditor"></div>
+    <div class="uk-width-1-1" id="bodyEditor"></div>
+  </div>
+  <div class="uk-width-1-2" id='renderBox'></div>
+</div>
+
+
+
+
+
+<% include ../templates/scripts.ejs %>
+<script src="/js/docs/common.js" type="text/javascript"></script>
+<script src="/js/docs/render.js" type="text/javascript"></script>
+<script src="/js/docs/edit.js" type="text/javascript"></script>
+
+</body>
+<% include ../templates/foot.ejs %>
+</html>

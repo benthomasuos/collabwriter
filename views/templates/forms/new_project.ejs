@@ -1,0 +1,64 @@
+
+
+
+
+  <button class="uk-button uk-button-primary uk-button-small uk-button-default uk-modal-close" type="button" uk-toggle="target: #project-modal"><i class="fa fa-plus"></i> Add project</button>
+
+  <div id="project-modal" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body">
+           <a class="uk-modal-close-default" type="button" uk-close></a>
+
+
+
+           <form class="uk-form uk-form-horizontal" id="newProjectForm" method="POST" action="/projects/create" enctype="application/x-www-form-urlencoded">
+               <div class="uk-form">
+
+                       <label>Project type</label>
+                       <select class="uk-select" name="category" required>
+                           <option value="FAST/SPS">FAST-SPS</option>
+                           <option value="Powder Bed Fusion">Powder Bed Fusion</option>
+                           <option value="Ceramic Extrusion">Ceramic Extrusion</option>
+                           <option value="Powder Characterisation">Powder Characterisation</option>
+                       </select>
+
+                       <label>Project name</label>
+                       <input class="uk-input" name="name" type="text" required/>
+
+                       <label>Project number <em>Optional</em></label>
+                       <input class="uk-input" name="number" type="text" />
+
+                       <label>Project cost <em>Optional</em></label>
+                       <div class="row">
+                           <div class="units">£</div>
+                           <input class="uk-input" name="value" type="number" min=0 max=10000000 step=500 />
+
+                        </div>
+                       <label for="description"> Description </label>
+                       <input class="uk-input" name="description" id="description" type="text" required/>
+
+                       <label for="sponsor"> Sponsoring company <em>(leave blank for internal projects)</em></label>
+                       <input class="uk-input" name="client" id="client" type="text" />
+
+                       <div class=" uk-text-center">
+                              <div class="uk-flex uk-flex-column">
+                                  <label uk-tooltip="title: Only you can see this powder; delay: 250; pos: bottom"><input class="uk-radio" type="radio" name="access_level" value="private">Private</label>
+                                  <label uk-tooltip="title: Only MAPP staff and students can see this powder; delay: 250; pos: bottom"><input class="uk-radio" type="radio" name="access_level" value="mapp">  MAPP</label>
+                                  <label uk-tooltip="title: Everyone with an account can see this powder; delay: 250; pos: bottom"><input class="uk-radio" type="radio" name="access_level" value="public">  Public</label>
+                              </div>
+                      </div>
+
+                       <div class="uk-container uk-margin uk-text-center">
+                           <div class="uk-button uk-button-default" onclick="$('#newProjectForm')[0].reset()"><i class="fa fa-refresh"></i>Reset</div>
+                           <button class="uk-button uk-button-primary" type="submit"><i class="fa fa-upload"></i>  Save </button>
+                       </div>
+               </div>
+           </form>
+
+
+
+
+
+
+
+      </div>
+  </div>

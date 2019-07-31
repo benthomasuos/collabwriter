@@ -1,0 +1,31 @@
+<nav class="uk-navbar-container" uk-navbar="mode:click">
+
+
+    <div class="uk-navbar-left">
+
+        <ul class="uk-navbar-nav">
+
+            <li uk-tooltip='title:Toggle menu; delay:250; pos:bottom'>
+              <a class="uk-inline" uk-toggle="target: #offcanvas-nav">
+                <i class='fa fa-bars fa-md'></i>
+              </a>
+              <div class='uk-width-1-1' uk-dropdown="mode: click; boundary: .uk-navbar; boundary-align: true; offset: 0"><% include menu.ejs %></div>
+            </li>
+            <li uk-tooltip='title:MAPP Dashboard; delay:250; pos:bottom'><a href="/dashboard"><i class='fa fa-dashboard fa-md'></i> </a></li>
+            <li uk-tooltip='title:Data analysis; delay:250; pos:bottom'><a href="/analysis"><i class='fa fa-line-chart fa-md'></i> </a></li>
+        </ul>
+
+    </div>
+
+    <div class="uk-navbar-right">
+
+        <ul class="uk-navbar-nav">
+            <li uk-tooltip='title:Read the documentation related to this system; delay:250; pos:bottom'><a href="/docs/" ><i class="fa fa-book fa-md"></i></a></li>
+            <li uk-tooltip='title:Report a Bug or Issue on this projects Github page; delay:250; pos:bottom'><a href="https://github.com/benthomasuos/mapp_powder/issues"> <i class="fa fa-github fa-md"></i></a></li>
+            <li uk-tooltip='title:View your account details; delay:250; pos:bottom'><a href="/account"><i class="fa fa-user fa-md"></i></a></li>
+            <li uk-tooltip='title:Logout from this session; delay:250; pos:bottom'><a href="/auth/logout"><i class="fa fa-sign-out fa-md"></i></a></li>
+        </ul>
+
+    </div>
+
+</nav>

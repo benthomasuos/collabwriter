@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ../templates/head.ejs %>
+<body>
+<% include ../templates/navbar.ejs %>
+
+
+<div class="uk-container uk-text-center uk-padding ">
+    <h1>Database - Dashboard</h1>
+    <p>This area shows stats about the database.</p>
+
+    <div class="uk-container uk-width-1-1  uk-child-width-1-4 uk-flex uk-flex-inline uk-flex-wrap">
+
+        <div class="uk-height-medium uk-padding-small">
+            <h2 class="uk-text-center">Storage</h2>
+            <select class="uk-select" id="storageSelect" oninput="getStorage($(this))"></select>
+            <div class="uk-container uk-width-1-1"></div>
+        </div>
+        <div class="uk-height-medium uk-padding-small">
+            <h2 class="uk-text-center">Powders</h2>
+            <select class="uk-select" id="storageSelect" oninput="getStorage($(this))"></select>
+            <div class="uk-container uk-width-1-1"></div>
+        </div>
+        <div class="uk-height-medium uk-padding-small">
+            <h2 class="uk-text-center">Powder Samples</h2>
+            <select class="uk-select" id="storageSelect" oninput="getStorage($(this))"></select>
+            <div class="uk-container uk-width-1-1"></div>
+        </div>
+        <div class="uk-height-medium uk-padding-small">
+            <h2 class="uk-text-center">Samples</h2>
+            <select class="uk-select" id="storageSelect" oninput="getStorage($(this))"></select>
+            <div class="uk-container uk-width-1-1"></div>
+        </div>
+        <div class="uk-height-medium uk-padding-small">
+            <h2 class="uk-text-center">Storage</h2>
+            <select class="uk-select" id="storageSelect" oninput="getStorage($(this))"></select>
+            <div class="uk-container uk-width-1-1"></div>
+        </div>
+        <div class="uk-height-medium uk-padding-small">
+            <h2 class="uk-text-center">Powders</h2>
+            <select class="uk-select" id="storageSelect" oninput="getStorage($(this))"></select>
+            <div class="uk-container uk-width-1-1"></div>
+        </div>
+        <div class="uk-height-medium uk-padding-small">
+            <h2 class="uk-text-center">Powder Samples</h2>
+            <select class="uk-select" id="storageSelect" oninput="getStorage($(this))"></select>
+            <div class="uk-container uk-width-1-1"></div>
+        </div>
+        <div class="uk-height-medium uk-padding-small">
+            <h2 class="uk-text-center">Samples</h2>
+            <select class="uk-select" id="storageSelect" oninput="getStorage($(this))"></select>
+            <div class="uk-container uk-width-1-1"></div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<% include ../templates/scripts.ejs %>
+<script src="/js/admin/dashboard.js" type="text/javascript"></script>
+</body>
+<% include ../templates/foot.ejs %>
+</html>

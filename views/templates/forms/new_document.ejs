@@ -1,0 +1,33 @@
+
+
+
+
+<button class="uk-button uk-button-primary uk-button-small uk-button-default uk-modal-close" type="button" uk-toggle="target: #doc-modal"><i class="fa fa-plus"></i> New Document</button>
+<div id="doc-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+         <a class="uk-modal-close-default" type="button" uk-close></a>
+
+
+
+         <form class="uk-form uk-form-horizontal" id="newDocForm" action="/docs" method="POST" enctype="application/x-www-form-urlencoded">
+
+                    <label>Title</label>
+                    <input class="uk-input" type="text" name="title" required />
+
+                    <label>Author</label>
+                    <input class="uk-input" type="text" name="author" required/>
+
+
+
+
+                     <div class="uk-container uk-margin uk-text-center">
+                         <div class="uk-button uk-button-default" onclick="$('#newDocForm')[0].reset()"><i class="fa fa-refresh"></i>Reset form</div>
+                         <button type='submit' class="uk-button uk-button-primary"><i class="fa fa-save"></i>  Save </button>
+                     </div>
+
+
+         </form>
+
+
+    </div>
+</div>
