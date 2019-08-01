@@ -60,6 +60,8 @@ app.set('view engine', 'ejs');
 app.use( '/', require('./routes') )
 app.use( '/account', require('./routes/user') )
 app.use( '/docs', require('./routes/docs') )
+app.use( '/templates', require('./routes/templates') )
+app.use( '/viewer', require('./routes/viewer') )
 
 app.use(helmet())
 

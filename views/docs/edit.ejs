@@ -7,10 +7,12 @@
 <span id='docId'><%= id %></span>
 <div class='uk-width-1-1 uk-flex uk-flex-between uk-margin-small'>
   <div>
+    <div class='uk-button uk-button-default uk-button-small'onclick='newDoc()'><i class='fa fa-plus'></i> New Doc</div>
     <div class='uk-button uk-button-default uk-button-small'onclick='saveDoc()'><i class='fa fa-save'></i></div>
     <div class='uk-button uk-button-default uk-button-small'onclick='printDoc()'><i class='fa fa-print'></i></div>
     <div class='uk-button uk-button-default uk-button-small'onclick='newRef()'><i class='fa fa-plus'></i> Reference</div>
     <div class='uk-button uk-button-default uk-button-small'onclick='newFig()'><i class='fa fa-plus'></i> Figure</div>
+    <a class='uk-button uk-button-default uk-button-small' href='/viewer/<%= id %>'><i class='fa fa-eye'></i> Viewer</a>
   </div>
   <div>
     <span id='status'></span>

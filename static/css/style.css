@@ -37,7 +37,11 @@ textarea {
   font-size: 0.875em;
   font-family: 'Lusitana', serif;
   height: 85vh;
-  overflow: scroll
+  overflow: hidden visible;
+}
+
+#renderBox::-webkit-scrollbar,#renderBox::-moz-scrollbar {
+    display: none;
 }
 
 #renderBox > h1, #renderBox > h2, #renderBox > h3, #renderBox > h4, #renderBox > h5, #renderBox > h6, #renderBox > div, #renderBox > p{
