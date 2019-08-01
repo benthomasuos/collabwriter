@@ -8,7 +8,7 @@ const FigureSchema = new Schema({
       category: String, // Type of figure. Photo, drawing, vector graphics, etc.
       caption: String,
       refkey: String,
-      media: [{ type: Schema.Types.ObjectId , ref: "Media"}],  // Reference from supplier for the batch of powder
+      file: Schema.Types.Mixed,  // Reference from supplier for the batch of powder
       createdBy: { type: Schema.Types.ObjectId , ref: "User"}, // User that created this record
       modifiedBy: { type: Schema.Types.ObjectId , ref: "User"} // User that last updated this record
 }, {timestamps: true})

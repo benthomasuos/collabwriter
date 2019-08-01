@@ -6,70 +6,47 @@ var ObjectId = require('mongodb').ObjectID;
 const router = express.Router({ mergeParams: true });
 var auth = require('../auth/middleware.js')
 
-var Template = require("../../models/template.js").Template
+var Reference = require("../../models/reference.js").Reference
 var User = require("../../models/user.js").User
 
+var upload = require('../uploads.js').upload
 
 //================================================================
-// Templates routing area
+// References routing area
 //================================================================
 
 
 router.get('/', function(req, res){
 
-   console.log(query)
+    Figures.find(query)
+    .exec(function(err, docs){
+        if(err){
+            res.json( { message: err , status:"warning"})
+        }
+        else{
+            console.log("Got " + docs.length )
+            res.json( { message:"Found " + docs.length + " documents in the database", status:"success", data: docs})
+        }
+    })
 
-    Template.find(query)
-            .exec(function(err, docs){
-                if(err){
-                    res.json( { message: err , status:"warning"})
-                }
-                else{
-                    console.log("Got " + docs.length )
-                    res.json( { message:"Found " + docs.length + " documents in the database", status:"success", data: docs})
-                }
-            })
 
 }).post('/', function(req, res){
-    console.log("Adding new doc " + req.body.title)
-    var doc = req.body
 
     //doc.createdBy = res.locals.user._id
     //doc.modifiedBy = res.locals.user._id
 
-    var docToSave = new Doc(doc)
+    var refToSave = new Reference(ref)
 
-  Doc.findOne({tile: doc.title}, function(err, result){
-      console.log(err, result)
-      if(err){
-          console.log(err)
-          console.log("Couldn't create a new document ")
-          res.json({message: "A document with this title already exists", status:"warning"})
-        }
-
-        if(!result) {
-            console.log("I have not found a document with this same title so I can add a new one")
-            docToSave.save( function(err, result){
+            refToSave.save( function(err, ref){
                 if(err){
                     console.log(err)
-                    console.log("Couldn't create a new document")
+                    console.log("Couldn't create a new refernce")
                     res.json({message: err, status:"warning"})
                   } else {
-                    console.log("Result:" + result)
-                    res.redirect('/docs/'+result._id+'/edit')
+                    console.log("Result:" + ref)
+                    res.json({data:ref})
                   }
                 })
-
-
-        }
-        else{
-
-
-          console.log("I found a prexisting test with this batch so this one cannot be added to the database", result)
-          res.json({message: "A FAST run with this batch number already exists. Please edit the existing test or create a new one with a different Batch ID", status:"warning"})
-      }
-    })
-
 
 
 })
@@ -78,9 +55,7 @@ router.get('/', function(req, res){
 
 router.get('/:id', function(req, res){
 
-        Doc.findOne({ _id: req.params.id })
-            .populate('references')
-            .populate('figures')
+        Figure.findOne({ _id: req.params.id })
             .exec(function(err, doc){
                 if(err){
                     console.log(err)
@@ -116,17 +91,6 @@ router.get('/:id', function(req, res){
 
 
 })
-
-
-
-
-
-
-router.get('/:id/edit', function(req, res){
-    console.log(req.params)
-    res.render('docs/edit',{id: req.params.id})
-})
-
 
 
 

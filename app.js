@@ -60,6 +60,8 @@ app.set('view engine', 'ejs');
 app.use( '/', require('./routes') )
 app.use( '/account', require('./routes/user') )
 app.use( '/docs', require('./routes/docs') )
+app.use( '/figures', require('./routes/figures') )
+app.use( '/references', require('./routes/references') )
 app.use( '/templates', require('./routes/templates') )
 app.use( '/viewer', require('./routes/viewer') )
 

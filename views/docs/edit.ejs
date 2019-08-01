@@ -11,7 +11,7 @@
     <div class='uk-button uk-button-default uk-button-small'onclick='saveDoc()'><i class='fa fa-save'></i></div>
     <div class='uk-button uk-button-default uk-button-small'onclick='printDoc()'><i class='fa fa-print'></i></div>
     <div class='uk-button uk-button-default uk-button-small'onclick='newRef()'><i class='fa fa-plus'></i> Reference</div>
-    <div class='uk-button uk-button-default uk-button-small'onclick='newFig()'><i class='fa fa-plus'></i> Figure</div>
+    <% include ../templates/forms/new_figure.ejs %>
     <a class='uk-button uk-button-default uk-button-small' href='/viewer/<%= id %>'><i class='fa fa-eye'></i> Viewer</a>
   </div>
   <div>
