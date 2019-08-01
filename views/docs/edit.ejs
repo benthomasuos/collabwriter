@@ -3,15 +3,27 @@
 <% include ../templates/head.ejs %>
 <body>
 
-<h1>CollabWriter</h1>
+<h1><a href='/'>CollabWriter</a></h1>
 <span id='docId'><%= id %></span>
+<div class='uk-width-1-1 uk-flex uk-flex-between uk-margin-small'>
+  <div>
+    <div class='uk-button uk-button-default uk-button-small'onclick='saveDoc()'><i class='fa fa-save'></i></div>
+    <div class='uk-button uk-button-default uk-button-small'onclick='printDoc()'><i class='fa fa-print'></i></div>
+    <div class='uk-button uk-button-default uk-button-small'onclick='newRef()'><i class='fa fa-plus'></i> Reference</div>
+    <div class='uk-button uk-button-default uk-button-small'onclick='newFig()'><i class='fa fa-plus'></i> Figure</div>
+  </div>
+  <div>
+    <span id='status'></span>
+  </div>
+</div>
+
 
 <div class="uk-flex uk-flex-nowrap">
-  <div class="uk-width-1-2" id='editBox'>
-    <div class="uk-width-1-1" id="titleEditor"></div>
-    <div class="uk-width-1-1" id="bodyEditor"></div>
+  <div class="uk-width-1-2 uk-margin-small" id='editBox'>
+    <div class="uk-width-1-1 uk-margin-small" id="titleEditor"></div>
+    <div class="uk-width-1-1 uk-margin-small" id="bodyEditor"></div>
   </div>
-  <div class="uk-width-1-2" id='renderBox'></div>
+  <div class="uk-width-1-2 uk-margin-small" id='renderBox'></div>
 </div>
 
 

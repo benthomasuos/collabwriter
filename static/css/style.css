@@ -32,14 +32,22 @@ textarea {
   display:none;
 }
 
-
-.render_h1 {
-  font-size: 1.6em;
-  font-family: 'Enriqueta', serif;
+#renderBox{
+  margin: 20px;
+  font-size: 0.875em;
+  font-family: 'Lusitana', serif;
+  height: 85vh;
+  overflow: scroll
 }
 
-.render_h2 {
-  font-size: 1.3em;
-  font-family: 'Enriqueta', serif;
+#renderBox > h1, #renderBox > h2, #renderBox > h3, #renderBox > h4, #renderBox > h5, #renderBox > h6, #renderBox > div, #renderBox > p{
+  font-family: inherit;
+}
 
+#renderBox > h1 {
+  font-size: 1.6em;
+}
+
+#renderBox > h2 {
+  font-size: 1.3em;
 }

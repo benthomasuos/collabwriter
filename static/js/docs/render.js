@@ -8,6 +8,8 @@ var body = ""
 var titleBox = d3.select("#titleEditor")
 var bodyBox = d3.select("#bodyEditor")
 
+var converter = new showdown.Converter();
+
 
 function renderDoc(){
   renderDiv.html('')
@@ -17,18 +19,16 @@ function renderDoc(){
 
 
 function renderTitle(){
+
     renderDiv.append('h1')
-            .attr('class','render_h1')
             .html(thisDoc.title)
 }
 
 
 function renderBody(){
-
-  renderDiv.append('div')
-          .attr('class','render_body')
-          .html(thisDoc.body)
-
+  var html = renderDiv.html()
+  var body = converter.makeHtml(thisDoc.body)
+  renderDiv.html(html + body)
 
 }
 

@@ -69,13 +69,19 @@ function initSave(){
 }
 
 function saveDoc(){
+  status('Saving document','black')
   console.log(thisDoc)
 
   $.ajax({
     url: '/docs/' + thisDoc._id,
     method: 'PUT',
+    contentType: "application/json",
+    processData: false,
     data: JSON.stringify(thisDoc),
-    success: function(){console.log('Save Completed')},
+    success: function(){
+      status('Saved document successfully.', 'green')
+      console.log('Save Completed')
+    },
     error: function (){console.log('Save Error')}
   })
 
